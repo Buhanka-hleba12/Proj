@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PROJ</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="" alt="">
+            
+            <div class="container">
+                <button class="btn-h" aria-expanded="false" aria-controls="list">Поддержка сайтов</button>
+
+                <ul class="menu" id="list" aria-hidden="true">
+                    <li class="menu-item">
+                        <a href="#" class="menu-link" tabindex="-1">Винни-Пух</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link" tabindex="-1">Тигра</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link" tabindex="-1">Пятачок</a>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <li>Тарифы</li>
+            <li>Наши работы</li>
+            <li>Отзывы</li>
+            <li>Контакты</li>
+    
+        </nav>
+        <div class="r-info">
+            <li>8 800 222-26-73</li>
+            <li>RU</li>
+        </div>
+        <div class="sec-h">
+            <div class ="d1"></div>
+            <div class ="d2"></div>
+        </div>
+    </header>
+    <script>
+        const button = document.querySelector('.btn-h')
+        const menu = document.querySelector('.menu')
+        const menuLinks = document.querySelectorAll('.menu-link')
+
+        button.addEventListener('click', (e) => {
+        button.classList.toggle('active')
+
+        if (button.classList.contains('active')) {
+            button.setAttribute('aria-expanded', 'true')
+            menu.setAttribute('aria-hidden', 'false')
+            menuLinks.forEach(link => link.setAttribute('tabindex', '0'))
+        } else {
+            button.setAttribute('aria-expanded', 'false')
+            menu.setAttribute('aria-hidden', 'true')
+            menuLinks.forEach(link => link.setAttribute('tabindex', '-1'))
+        }
+        })
+
+    </script>
+</body>
+</html>
