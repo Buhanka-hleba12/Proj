@@ -8,60 +8,48 @@
 </head>
 <body>
     <header>
-        <nav>
-            <img src="" alt="">
-            
-            <div class="container">
-                <button class="btn-h" aria-expanded="false" aria-controls="list">Поддержка сайтов</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="#"><img src="" alt=""></a></li>
+                <li class="active"><a href="#">Поддержка сайтов</a></li>
+                <li class="n-li"><a href="#">Тарифы</a></li>
+                <li class="n-li"><a href="#">Наши работы</a></li>
+                <li class="n-li"><a href="#">Отзывы</a></li>
+                <li class="n-li"><a href="#">Контакты</a></li>
 
-                <ul class="menu" id="list" aria-hidden="true">
-                    <li class="menu-item">
-                        <a href="#" class="menu-link" tabindex="-1">Винни-Пух</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link" tabindex="-1">Тигра</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link" tabindex="-1">Пятачок</a>
-                    </li>
-                </ul>
+                <li style="padding: 14px 16px;">8 800 222-26-73</li>
+                <li style="padding: 14px 16px;">RU</li>
+            </ul>
+            
+            
+          </nav>
+
+          <div class="columns">
+            <div class="column left">
+                <h2>Поддержка <br> сайтов на Drupal</h2>
+                <p>Сопровождение и поддержка сайтов на CMS Drupal любых версий и запущенности</p>
+                <button>ТАРИФЫ</button>
             </div>
-            
-
-            <li>Тарифы</li>
-            <li>Наши работы</li>
-            <li>Отзывы</li>
-            <li>Контакты</li>
-    
-        </nav>
-        <div class="r-info">
-            <li>8 800 222-26-73</li>
-            <li>RU</li>
+            <div class="column right">
+                <p>Правая колонка</p>
+            </div>
         </div>
-        <div class="sec-h">
-            <div class ="d1"></div>
-            <div class ="d2"></div>
-        </div>
+        
+        
     </header>
     <script>
-        const button = document.querySelector('.btn-h')
-        const menu = document.querySelector('.menu')
-        const menuLinks = document.querySelectorAll('.menu-link')
+       // Получаем все элементы списка li
+        const listItems = document.querySelectorAll('ul li');
 
-        button.addEventListener('click', (e) => {
-        button.classList.toggle('active')
-
-        if (button.classList.contains('active')) {
-            button.setAttribute('aria-expanded', 'true')
-            menu.setAttribute('aria-hidden', 'false')
-            menuLinks.forEach(link => link.setAttribute('tabindex', '0'))
-        } else {
-            button.setAttribute('aria-expanded', 'false')
-            menu.setAttribute('aria-hidden', 'true')
-            menuLinks.forEach(link => link.setAttribute('tabindex', '-1'))
-        }
-        })
-
+        // Добавляем обработчик событий для каждого элемента
+        listItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Удаляем класс active у всех элементов
+                listItems.forEach(li => li.classList.remove('active'));
+                // Добавляем класс active к текущему элементу
+                item.classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>

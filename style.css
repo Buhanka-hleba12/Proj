@@ -1,80 +1,121 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 header{
-    width: 100%;
-    height: 650px;
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-}
-li{
-  list-style: none;
-}
-nav{
-    width: 100%;
-    background-color: antiquewhite;
-    height: 110px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav img { 
-  width: 112.78px; 
-  height: 19.24px;
+  height: 650px;
+  background: #000000; /* Синий фон для наглядности */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение элементов */
+  justify-content: space-between; /* Распределение пространства */
+  padding: 10px 20px;
+  
+    
 }
 
-.nav li, .container {
-    width: 141px; 
-    height: 10px;
-    margin: 5px;
-    list-style: none;
+nav{
+  padding: 10px 0;
+    
 }
-.btn-h, .container {
-    text-align: center;
-    padding: 0.5lh 1.5lh;
-    font: inherit;
-    color: currentColor;
-    
-    border-bottom: 1px dashed gray;
-    
-  }
-  
-.btn-h:hover, .btn-h:focus-visible {
-    border: solid 1px #ff504e;
-  }
-  
-.menu {
-    position: relative;
-    display: grid;
-    margin-block-start: 0.5lh;
-    background-color: #ff504e;
-  
-    overflow: hidden;
-    line-height: 0;
-    color: transparent;
-    transition: line-height 0.5s, color 0.5s;
-  }
-  
-.menu-item {
-    overflow: hidden;
+nav img { 
+  width: 137px; 
+  height: 20px;
 }
+nav ul {
+  display: flex;
+  justify-content: center; /* Выровнять по центру */
+  gap: 20px;
+  list-style: none;
+}
+
+li {
+  float: left;
+  color: aliceblue;
+  font-size: 1.32vw;
+  margin: 0 5px;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav ul li a:hover {
+  color: #f1c40f;
+}
+.active {
+  border-bottom: solid 2px #ff6933;
+}
+
+.columns {
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 1; /* Заполняет оставшееся пространство */
+}
+
+.column {
+  flex: 1; /* Колонки занимают равное пространство */
+  min-width: 300px; /* Минимальная ширина для адаптации */
   
-.menu-link {
-    display: block;
-    padding: 0.5lh 80px;
-    list-style: none;
-    color: white;
-  }
+  border: 1px solid #bdc3c7;
+  /* text-align: center; */
+  padding: 20px;
+}
+
+.left {
+  /* width: 506px;
+  height: 306px; */
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+.left h2{
+  font-size: 48px;
   
-.menu-link:hover, .menu-link:focus-visible {
-    background-color: #f5cac3;
-    
+}
+.right {
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-color: lightblue;
   }
-  
-.btn-h.active ~ .menu {
-    line-height: 1.2;
-    color: currentColor;
+  header {
+    height: 500px;
+}
+
+nav ul {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.columns {
+    flex-direction: column;
   }
+}
+@media (max-width: 480px) {
+  header {
+      height: 400px;
+  }
+
+  nav ul li a {
+      font-size: 16px;
+  }
+}
